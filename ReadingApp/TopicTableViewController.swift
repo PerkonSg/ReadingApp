@@ -11,28 +11,28 @@ import UIKit
 class TopicTableViewController: UITableViewController {
     
     var topicsNumberAlgebra = [
-        Topics(topic: "Prime Numbers, HCF & LCM"),
-        Topics(topic: "Integers, Rational Numbers & Real Numbers"),
-        Topics(topic: "Approximation & Estimation"),
-        Topics(topic: "Rate, Ratio, Speed and Percentage"),
-        Topics(topic: "Basic Algebra & Algebraic Manipulation"),
-        Topics(topic: "Linear Equations & Simple Inequalities"),
-        Topics(topic: "Basic Algebraic Formula"),
-        Topics(topic: "Number Patterns"),
-        Topics(topic: "Application of Math in Practical Situations"),
-        Topics(topic: "Set Notations"),
-        Topics(topic: "Venn Diagrams"),
-        Topics(topic: "Quadratic Equations")
+        Topics(topic: "Prime Numbers, HCF & LCM", topicnumber: 1),
+        Topics(topic: "Integers, Rational Numbers & Real Numbers", topicnumber: 2),
+        Topics(topic: "Approximation & Estimation", topicnumber: 3),
+        Topics(topic: "Rate, Ratio, Speed and Percentage", topicnumber: 4),
+        Topics(topic: "Basic Algebra & Algebraic Manipulation", topicnumber: 5),
+        Topics(topic: "Linear Equations & Simple Inequalities", topicnumber: 6),
+        Topics(topic: "Basic Algebraic Formula", topicnumber: 7),
+        Topics(topic: "Number Patterns", topicnumber: 8),
+        Topics(topic: "Application of Math in Practical Situations", topicnumber: 9),
+        Topics(topic: "Set Notations", topicnumber: 10),
+        Topics(topic: "Venn Diagrams", topicnumber: 11),
+        Topics(topic: "Quadratic Equations", topicnumber: 12)
         ]
     var topicsGeometry = [
-        Topics(topic: "Basic Geometry"),
-        Topics(topic: "Triangles, Quadrilaterals and Polygons"),
-        Topics(topic: "Perimeter and Area of Plane Figures"),
-        Topics(topic: "Volume and Surface Area of Solids")
+        Topics(topic: "Basic Geometry", topicnumber: 13),
+        Topics(topic: "Triangles, Quadrilaterals and Polygons", topicnumber: 14),
+        Topics(topic: "Perimeter and Area of Plane Figures", topicnumber: 15),
+        Topics(topic: "Volume and Surface Area of Solids", topicnumber: 16)
         ]
     var topicsStatisticsProbability = [
-        Topics(topic: "Statistical Data Handling"),
-        Topics(topic: "Averages of Statistical Data"),
+        Topics(topic: "Statistical Data Handling", topicnumber: 17),
+        Topics(topic: "Averages of Statistical Data", topicnumber: 18),
     ]
 
     override func viewDidLoad() {
@@ -141,13 +141,17 @@ class TopicTableViewController: UITableViewController {
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             if selectedIndexPath.section == 0 {
                 destVC.designatedTitle = topicsNumberAlgebra[selectedIndexPath.row].topic
+                destVC.topicNum = topicsNumberAlgebra[selectedIndexPath.row].topicnumber
             }
             if selectedIndexPath.section == 1 {
                 destVC.designatedTitle = topicsGeometry[selectedIndexPath.row].topic
+                destVC.topicNum = topicsGeometry[selectedIndexPath.row].topicnumber
             }
             if selectedIndexPath.section == 2 {
                 destVC.designatedTitle = topicsStatisticsProbability[selectedIndexPath.row].topic
+                destVC.topicNum = topicsStatisticsProbability[selectedIndexPath.row].topicnumber
             }
+            
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
