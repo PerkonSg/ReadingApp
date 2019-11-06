@@ -16,6 +16,7 @@ class ReadyViewController: UIViewController {
     var topicNum: Int!
     var designatedTitle = ""
     var count = 5
+    var questionss = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
