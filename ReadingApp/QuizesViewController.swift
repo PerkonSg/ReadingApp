@@ -9,17 +9,15 @@
 import UIKit
 
 class QuizesViewController: UIViewController {
+    @IBOutlet weak var questionnoLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     var questionQuestion = ""
     var questionAnswer = ""
-    @IBOutlet weak var cheerLabel: UILabel!
     @IBOutlet weak var topicLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button1Label: UILabel!
-    @IBOutlet weak var button2label: UILabel!
-    @IBOutlet weak var button3label: UILabel!
+
     var topicNum: Int!
     let questions = [
         [Question(questionasked: "Which of these is not a prime number? 69, 96, 420, 69420", answer1: "all", answer2: "none", answer3: "69", correctanswer: "all")],
@@ -46,28 +44,19 @@ class QuizesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cheerLabel.isHidden = true
         topicLabel.text = "\(questionAnswer)"
         let questionSet = questions[topicNum]
         questionLabel.text = questionSet[0].questionasked
-        button1Label.text = questionSet[0].answer1
-        button2label.text = questionSet[0].answer2
-        button3label.text = questionSet[0].answer3
+        button1.text = questionSet[0].answer1
+        button2.text = questionSet[0].answer2
+        button3.text = questionSet[0].answer3
         
-        
-        
-        topicLabel.text = topics[topicNum]
-        button1.backgroundColor = UIColor.init(red: 200/255, green: 120/255, blue: 99/255, alpha: 1 )
-        button1.layer.cornerRadius = 10.0
-        button2.backgroundColor = UIColor.init(red: 200/255, green: 80/255, blue: 99/255, alpha: 1 )
-        button2.layer.cornerRadius = 10.0
-        button3.backgroundColor = UIColor.init(red: 200/255, green: 40/255, blue: 99/255, alpha: 1 )
-        button3.layer.cornerRadius = 10.0
         
         // Do any additional setup after loading the view.
     }
+    /*
     @IBAction func button1Pressed(_ sender: Any) {
-        if questions.questionasked = questions.correctanswer {
+        if [topicNum]= questions.correctanswer {
         print("correct")
         cheerLabel.text = "Correct"
         }
@@ -75,6 +64,7 @@ class QuizesViewController: UIViewController {
             print("wrong")
         }
     }
+ */
     @IBAction func button2Pressed(_ sender: Any) {
             
         }
